@@ -2,16 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 const { 
-    getIndex 
+    getIndex, getDocument 
 } = require('../controller/helper');
 
 
 /** */
 router.get("/",  getIndex);
-router.get("/login",  getIndex);
+router.post("/login",  getIndex);
 router.get("/documents",  getIndex);
-router.get("/documents/:id",  getIndex);
-router.get("/add/record",  getIndex);
-router.get("/edit/record",  getIndex);
+router.get("/document/:id", getDocument);
+router.post("/add/record",  getIndex);
+router.put("/edit/record",  getIndex);
 
 module.exports = router;
